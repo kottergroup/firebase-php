@@ -57,6 +57,11 @@ $firebase->set('test','testValue');
 // Support multiple nodes, if it doesnt exist, it will create the node
 $firebase->set('testObject/testKey', 'testValueObject');
 
+// Update properties of an object. This requires to call setPath first to identify the parent
+$firebase->patch([
+	'firstname'  => 'value',
+	'lastname' => 'value1'
+]);
 
 // Same as set but without keys. This requires to call setPath first to identify the parent
 $firebase->push([

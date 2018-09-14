@@ -64,5 +64,10 @@ class Firebase
         $this->httpClient->push($arr);
     }
 
+    public function patch($arr)
+    {
+        $this->httpClient->patch($arr);
+    }
+
 
 }

@@ -11,4 +11,6 @@ interface FirebaseInterface
     public function delete($key);
 
     public function push($arr);
+
+    public function patch($arr);
 }

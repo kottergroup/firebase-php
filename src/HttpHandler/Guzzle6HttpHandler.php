@@ -88,4 +88,12 @@ class Guzzle6HttpHandler implements FirebaseInterface
         return $response->getBody()->getContents();
     }
 
+    public function patch($arr)
+    {
+        $response = $this->http->request('PATCH', $this->databaseUri->withPath($this->path),
+            ['body' => json_encode($arr), 'timeout' => $this->config['timeout']]);
+
+        return $response->getBody()->getContents();
+    }
+
 }
