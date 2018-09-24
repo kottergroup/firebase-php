@@ -75,9 +75,6 @@ $firebase->get('test');
 // Get the value of using multilevel key
 $firebase->get('testObject/testKey');
 
-
-
-
 // Delete the node with key = test
 $firebase->delete('test');
 
