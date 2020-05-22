@@ -72,6 +72,16 @@ class Guzzle6HttpHandler implements FirebaseInterface
 
     }
 
+    public function getSingleOrderByChild($key, $child, $equal)
+    {
+        $url = config('service.firebase.default_url');
+        $path = $this->path. $key . '.json?orderBy="'.$child.'"&equalTo="'.$equal.'"&limitToFirst=1';
+        $uri = $url . '/' . $path;
+        $response = $this->http->request('GET', $uri);
+
+        return $response->getBody()->getContents();
+    }
+
     public function delete($key)
     {
         $response = $this->http->request('DELETE', $this->databaseUri->withPath($this->path. $key,
