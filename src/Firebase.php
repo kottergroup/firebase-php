@@ -59,6 +59,11 @@ class Firebase
         return $this->httpClient->getSingleOrderByChild($key, $child, $equal);
     }
 
+    public function getOrderByChild($key, $child, $equal)
+    {
+        return $this->httpClient->getOrderByChild($key, $child, $equal);
+    }
+
     public function delete($key)
     {
         $this->httpClient->delete($key);
